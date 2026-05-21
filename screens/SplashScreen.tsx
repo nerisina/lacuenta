@@ -4,6 +4,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 export default function SplashScreen({ navigation }: any) {
   return (
     <View style={styles.container}>
+      <StatusBar style="light" />
       <Text style={styles.logo}>LA CUENTA</Text>
       <Text style={styles.tagline}>* SPLIT SMARTER WITH FRIENDS *</Text>
       <View style={styles.btnRow}>
@@ -13,10 +14,12 @@ export default function SplashScreen({ navigation }: any) {
         >
           <Text style={styles.btnText}>LOG IN</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btn}>
+        <TouchableOpacity
+          style={styles.btn}
+          onPress={() => navigation.navigate("SignUp")}
+        >
           <Text style={styles.btnText}>SIGN IN</Text>
         </TouchableOpacity>
-        <StatusBar style="light" />
       </View>
     </View>
   );
